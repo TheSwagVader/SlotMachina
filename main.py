@@ -72,7 +72,9 @@ class SlotMachina:
                 update.message.reply_text('Вы проиграли')
 
             else:
-                update.message.reply_text(f'Вы выйграли {self.currentBet * self.winTable[incomingValue]}$')
+                winValue = self.currentBet * self.winTable[incomingValue]
+                self.playerBalance += winValue
+                update.message.reply_text(f'Вы выйграли {winTable}$')
             if self.playerBalance > 0:
                 update.message.reply_text(f'Ваш баланс {self.playerBalance}$. Хотите сыграть ещё? Тогда вводите ставку. Иначе - reset.')
             else:
