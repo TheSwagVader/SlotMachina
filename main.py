@@ -16,6 +16,12 @@ class SlotMachina:
         self.dispatcher.add_handler(MessageHandler(Filters.dice.slot_machine, self.process))
         self.dispatcher.add_handler(MessageHandler(Filters.text, self.filter))
         
+        #trash sector
+        self.dispatcher.add_handler(MessageHandler(Filters.dice.dice, self.filter))
+        self.dispatcher.add_handler(MessageHandler(Filters.dice.darts, self.filter))
+        self.dispatcher.add_handler(MessageHandler(Filters.dice.football, self.filter))
+        self.dispatcher.add_handler(MessageHandler(Filters.dice.basketball, self.filter))
+
         self.playerBalance = 0
         self.currentBet = 0
         self.isGameNow = False
